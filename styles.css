@@ -1,0 +1,570 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+/* Header and Navigation Bar */
+header {
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  color: #333;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed; /* Make the navbar float */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensure it stays on top of other content */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for floating effect */
+}
+
+header .logo img {
+  height: 40px; /* Slightly smaller logo for a modern look */
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  color: #333;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+  color: #ff6f61; /* Highlight color on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Theme Toggle Button */
+nav .theme-button {
+  background-color: #333;
+  color: #fff;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 25px; /* Rounded edges for a modern button */
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+nav .theme-button:hover {
+  background-color: #555; /* Darker shade on hover */
+  transform: translateY(-2px); /* Lift effect */
+}
+
+/* ==================== */
+/* Dark Mode Styles */
+/* ==================== */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff; /* Ensure text is visible in dark mode */
+}
+
+body.dark-mode header {
+  background-color: rgba(18, 18, 18, 0.9);
+  color: #ffffff;
+}
+
+body.dark-mode nav a {
+  color: #ffffff;
+}
+
+body.dark-mode nav a:hover {
+  color: #ff6f61;
+}
+
+body.dark-mode .theme-button {
+  background-color: #ff6f61;
+  color: #121212;
+}
+
+body.dark-mode .theme-button:hover {
+  background-color: #e65a50;
+}
+
+/* Ensure all text elements are visible in dark mode */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode p,
+body.dark-mode label,
+body.dark-mode th,
+body.dark-mode td {
+  color: #ffffff; /* Set text color to white in dark mode */
+}
+
+/* Adjust table text color in dark mode */
+body.dark-mode table th,
+body.dark-mode table td {
+  color: #ffffff;
+  border-color: #444; /* Adjust border color for better visibility */
+}
+
+/* Adjust form input text color in dark mode */
+body.dark-mode input,
+body.dark-mode textarea {
+  background-color: #333;
+  color: #ffffff;
+  border-color: #555;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #bbb; /* Adjust placeholder text color */
+}
+
+/* Adjust footer text color in dark mode */
+body.dark-mode footer {
+  background-color: #333;
+  color: #ffffff;
+}
+
+body.dark-mode footer a {
+  color: #ff6f61;
+}
+
+body.dark-mode footer a:hover {
+  color: #e65a50;
+}
+
+/* Call-to-Action Button */
+nav .cta-button {
+  background-color: #ff6f61;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 25px; /* Rounded edges for a modern button */
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+nav .cta-button:hover {
+  background-color: #e65a50; /* Darker shade on hover */
+  transform: translateY(-2px); /* Lift effect */
+}
+
+/* Banner Section */
+.banner {
+  background-image: url('../images/banner.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+}
+
+.banner-content {
+  position: relative;
+  z-index: 1;
+}
+
+.banner h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+.banner p {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.banner form {
+  margin-top: 20px;
+}
+
+.banner input[type="text"] {
+  padding: 10px;
+  width: 300px;
+  border: none;
+  border-radius: 5px;
+}
+
+.banner button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #ff6f61;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.banner button:hover {
+  background-color: #e65a50;
+}
+.featured-recipes {
+  padding: 20px;
+  text-align: center;
+}
+
+.recipe-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.recipe-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 30%;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recipe-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.recipe-card img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.recipe-card h3 {
+  margin: 10px 0;
+}
+
+.recipe-table {
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table th {
+  background-color: #333;
+  color: #fff;
+}
+
+.contact-form {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  background-color: #ff6f61;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+footer a {
+  color: #ff6f61;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* What We're Craving Section */
+.craving-collections {
+  padding: 20px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.craving-collections h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.collection-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.collection-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 30%;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.collection-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.collection-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.collection-card h3 {
+  margin: 10px 0;
+  font-size: 1.2em;
+}
+
+.collection-card p {
+  font-size: 0.9em;
+  color: #555;
+}
+
+/* ==================== */
+/* Recipe Collection Section */
+/* ==================== */
+.recipe-collection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 40px;
+  background-color: #fff;
+}
+
+.collection-content {
+  flex: 1;
+  max-width: 50%;
+}
+
+.collection-content h2 {
+  font-size: 1.5em;
+  color: #ff6f61;
+  margin-bottom: 10px;
+}
+
+.collection-content h3 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.collection-content p {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.collection-content .cta-button {
+  background-color: #ff6f61;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.collection-content .cta-button:hover {
+  background-color: #e65a50;
+}
+
+.collection-image {
+  flex: 1;
+  text-align: center;
+}
+
+.collection-image img {
+  max-width: 80%;
+  border-radius: 20px;
+}
+
+/* ==================== */
+/* Who We Are Section */
+/* ==================== */
+.who-we-are {
+  padding: 60px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.who-we-are h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.who-we-are p {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.team-member {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.team-member img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+.team-member h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.team-member p {
+  font-size: 0.9em;
+  color: #555;
+  margin: 5px 0;
+  line-height: 1.4;
+}
+
+.team-member p:first-of-type {
+  font-weight: 600;
+  color: #333;
+}
+
+.team-member p:last-of-type {
+  font-style: italic;
+  color: #777;
+}
+
+.who-we-are .cta-button {
+  background-color: #ff6f61;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.who-we-are .cta-button:hover {
+  background-color: #e65a50;
+}
+
+/* ==================== */
+/* YouTube Video Section */
+/* ==================== */
+.youtube-video {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.youtube-video h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.video-container {
+  position: relative;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.video-container img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 111, 97, 0.8);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.play-button i {
+  font-size: 24px;
+  color: #fff;
+}
+
+.play-button:hover {
+  background-color: rgba(255, 111, 97, 1);
+}
+
+.video-note {
+  font-size: 0.9em;
+  color: #777;
+  margin-top: 10px;
+}

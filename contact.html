@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Contact Recipe Hub for inquiries and feedback.">
+  <meta name="keywords" content="recipes, cooking, home cooking, food">
+  <meta name="author" content="Rilwan Lemboye">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Hub - Contact Us</title>
+  <link rel="stylesheet" href="style1.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="images/logo.png" alt="Recipe Hub Logo">
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="recipes.html">Recipes</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="blog.html">Blog</a>
+      <a href="docs.html">Docs</a>
+      <button id="theme-toggle" class="theme-button">🌙 Dark Mode</button>
+    </nav>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <h1>Get In Touch With Us Now!</h1>
+    <div class="contact-container">
+      <!-- Contact Details -->
+      <div class="contact-details">
+      <div class="contact-info">
+          <i class="fas fa-phone"></i>
+          <h3>Phone Number</h3>
+          <p>+91 80004 36640</p>
+      </div>
+      <div class="contact-info">
+        <i class="fas fa-envelope"></i>
+        <h3>Email</h3>
+          <p>info@food.com</p>
+            <p>sales@food.com</p>
+            </div>
+          <div class="contact-info">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Location</h3>
+            <p class="location">518, Rhythm Plaza, Amar Javan Circle</p>
+          </div>
+          <div class="contact-info">
+            <i class="fas fa-clock"></i>
+            <h3>Working Hours</h3>
+            <p>Monday To Saturday</p>
+            <p>09:00 AM To 06:00 PM</p>
+          </div>
+        </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <h2>Contact Us</h2>
+        <form action="#" method="post">
+          <div class="form-group">
+            <label for="first-name">First Name *</label>
+            <input type="text" id="first-name" name="first-name" required>
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last-name">
+          </div>
+          <div class="form-group">
+            <label for="mobile">Mobile No *</label>
+            <input type="tel" id="mobile" name="mobile" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email ID *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="captcha">Please type the characters *</label>
+            <input type="text" id="captcha" name="captcha" required>
+            <p class="captcha-hint">This helps us prevent spam, thank you.</p>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Recipe Hub | <a href="about.html">About</a> | <a href="https://tasty.co" target="_blank">Visit Tasty</a></p>
+  </footer>
+
+  <script>
+    // Dark Mode Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      body.classList.add(savedTheme);
+      updateButtonText(savedTheme);
+    }
+
+    themeToggle.addEventListener('click', () => {
+      if (body.classList.contains('dark-mode')) {
+        body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light-mode');
+        updateButtonText('light-mode');
+      } else {
+        body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark-mode');
+        updateButtonText('dark-mode');
+      }
+    });
+
+    function updateButtonText(theme) {
+      if (theme === 'dark-mode') {
+        themeToggle.textContent = '☀️ Light Mode';
+      } else {
+        themeToggle.textContent = '🌙 Dark Mode';
+      }
+    }
+  </script>
+  
+</body>
+</html>
